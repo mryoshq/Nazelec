@@ -1,0 +1,108 @@
+---
+import { getEntry } from "astro:content"; 
+import { marked } from "marked";
+import { Icon } from "astro-icon";
+import { t } from "@util/translate";
+import Newsletter from "@components/newsletter/Newsletter.vue";
+
+const today = new Date();
+let about = await getEntry("config", "about");
+let contact = await getEntry("config", "contact");
+let navigation = await getEntry("config", "navigation");
+
+ 
+
+const showNewsletter = !!import.meta.env.NEWSLETTER_PROVIDER;
+---
+
+<footer class="surface-footer relative grid">
+  <div
+    class="container-xl mx-auto flex flex-col justify-between pb-5 pt-10 lg:flex-row lg:space-y-0"
+  >
+    <div
+      class="flex flex-col items-center pb-8 text-center lg:w-1/3 lg:items-start lg:text-left"
+    >
+      <a rel="noopener noreferrer" href="#" aria-label={t("back_to_home")}>
+        <Icon name="logo-footer" class="h-8" />
+      </a>
+
+      {
+        about.data.footer_text && (
+          <div
+            class="balance pr-4 pt-4 text-sm opacity-70"
+            set:html={marked.parse(about.data.footer_text)}
+          />
+        )
+      }
+      <div class="mt-auto flex gap-2 pt-4 text-xs opacity-70">
+        <span>&copy;{today.getFullYear()}</span>
+        <span> {about.data.sitename}</span>
+      </div>
+    </div>
+    <div class="grid w-full lg:w-2/3">
+      <div
+        class="flex-wrap justify-center gap-8 text-center sm:flex sm:justify-between sm:text-left"
+      >
+        {
+          navigation.data.footer_menus &&
+            navigation.data.footer_menus.map((menu) => (
+              <div class="min-w-[12rem] space-y-3 sm:max-w-[14rem]">
+                <h3 class="font-semibold uppercase">{menu.label}</h3>
+                <ul class="space-y-1">
+                  {menu.links.map((link) => (
+                    <li>
+                      <a
+                        rel="noopener noreferrer"
+                        href={link.href}
+                        class="link-underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+        }
+        <div class="min-w-[12rem] space-y-3 sm:max-w-[14rem]">
+          <div class="font-semibold uppercase">{t("social")}</div>
+          <div class="flex flex-col">
+            {
+              contact.data.social && (
+                <ul class="-ml-1 flex  flex-wrap justify-center gap-2 sm:justify-start ">
+                  {contact.data.social.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="grid h-full place-items-center transition-transform duration-500 hover:scale-110 "
+                        target="_blank"
+                        aria-label={link.label}
+                      >
+                        <Icon name={link.icon} class="h-8 w-8" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+          </div>
+        </div>
+
+        {
+          showNewsletter && (
+            <div class="gap:10 flex-col content-end  items-end justify-end  py-0 pt-8 sm:ml-auto sm:flex sm:max-w-md sm:pt-0 sm:text-right">
+              <div
+                class="richtext dense no-lead balance leading-none opacity-80"
+                set:html={marked.parse(about.data.newsletter_text)}
+              />
+              <Newsletter client:visible />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <slot />
+
+</footer>
+<style></style>
