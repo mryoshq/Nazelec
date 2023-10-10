@@ -1,17 +1,14 @@
 {
-  "name": "nebulix",
+  "name": "nazelec",
   "type": "module",
-  "license": "CC BY-ND 4.0",
+  "license": "MIT",
   "version": "0.1.6",
   "keywords": [
-    "astro",
-    "Static CMS",
-    "Vue 3",
-    "mdx",
-    "markdown"
+    "nazelec","électricité", "construction"
+    
   ],
-  "description": "Fast & Green Theme Based on Astro + Static CMS. A Universe of Possibilities: Blogs, Portfolios, Menus, Webshop & Beyond",
-  "scripts": {
+  "description": "Éclairons votre parcours ensemble, NAZELEC.",
+  "scripts": { 
     "postbuild": "pagefind --site dist --output-path dist/_pagefind",
     "dev": "astro dev",
     "start": "astro dev",
@@ -19,7 +16,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "cms-proxy-server": "npx @staticcms/proxy-server",
-    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=en CURRENCY=USD UNITS=metric NODE_VERSION=18 SNIPCART_KEY=ZDVjZmQwYmUtMzNlYy00OGEyLTkxMTItMTg4YTI5NGQxN2I3NjM4MjgzOTQyMzA2MTM1NjI1 astro dev"
+    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=fr CURRENCY=MAD UNITS=metric NODE_VERSION=18 SNIPCART_KEY= astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.2.0",

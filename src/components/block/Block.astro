@@ -4,8 +4,7 @@ import TextImage from "./TextImage.astro";
 import RecentItems from "./RecentItems.astro";
 import RichText from "./RichText.astro";
 import Features from "./Features.astro";
-import ShopCategories from "./ShopCategories.astro";
-import ShopProducts from "./ShopProducts.astro";
+
 const { slot, ...props } = Astro.props;
 ---
 
@@ -19,6 +18,5 @@ const { slot, ...props } = Astro.props;
   {props.component === "RecentItems" && <RecentItems {...props} />}
   {props.component === "RichText" && <RichText {...props} />}
   {props.component === "Features" && <Features {...props} />}
-  {props.component === "ShopCategories" && <ShopCategories {...props} />}
-  {props.component === "ShopProducts" && <ShopProducts {...props} />}
+  
 </section>
