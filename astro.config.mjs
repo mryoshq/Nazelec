@@ -105,9 +105,7 @@ export default defineConfig({
     build: {
       rollupOptions: {
         external: [
-          "/_pagefind/pagefind.js",
-          "/_pagefind/pagefind-ui.js",
-          "/_pagefind/pagefind-ui.css",
+
         ],
       },
       assetsInlineLimit: 10096,

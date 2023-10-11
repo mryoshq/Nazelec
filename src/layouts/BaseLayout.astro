@@ -4,7 +4,7 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Init from "@components/common/Init.vue";
-import SnipCart from "@components/shop/SnipCartInit.vue";
+
 import { Icon } from "astro-icon";
 import { t } from "@util/translate";
 import "@fontsource-variable/inter-tight";
@@ -12,7 +12,7 @@ import "@fontsource-variable/inter-tight/wght-italic.css";
 
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
-const snipcartKey = import.meta.env.SNIPCART_KEY;
+
 const { title, description, pageClass, thumbnail, og_image } = Astro.props;
 const navigation = await getEntry("config", "navigation");
 const about = await getEntry("config", "about");
@@ -29,16 +29,7 @@ const contact = await getEntry("config", "contact");
     />
   </head>
   <body class={`surface-base ${pageClass || ""}`}>
-    {
-      snipcartKey && (
-        <SnipCart
-          transition:persist
-          transition:name="snipcart-base"
-          snipcartKey={snipcartKey}
-          client:idle
-        />
-      )
-    }
+   
     <Header
       title={title}
       menu={navigation.data.main_menu}

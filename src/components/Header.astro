@@ -1,8 +1,6 @@
 ---
 import NavMobile from "@components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon";
-import PageFind from "@components/common/PageFind.astro";
-import CartButton from "@components/shop/CartButton.vue";
 import { t } from "@util/translate";
 
 const { menu, title, social } = Astro.props;
@@ -39,19 +37,7 @@ const isActive = (href) => {
     {
       (
         <ul class="nav-underline relative -mr-4  ml-auto flex flex-nowrap justify-end pl-4 uppercase md:mr-0">
-          <li>
-            <CartButton
-              label={t("cart")}
-              client:idle
-              transition:persist
-              transition:name="cart"
-            >
-              <Icon name="shopping-cart" class="h-6 w-6" />
-            </CartButton>
-          </li>
-          <li>
-            <PageFind />
-          </li>
+     
 
           {social &&
             social.slice(0, 3).map((link) => (

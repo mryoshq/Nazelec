@@ -33,7 +33,6 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --color-primary: 0 90 112;
-
       --color-secondary: 107 154 199;
       --color-accent: 119 112 150;
       --color-warning: 202 121 45;
@@ -109,8 +108,8 @@ body {
 .surface-footer {
   background-color: #005A70;
   @apply text-light;
+  @apply dark:bg-black;
 }
-
 
 .surface-menu {
   @apply bg-light bg-opacity-90 text-primary  dark:bg-black dark:bg-opacity-90;
@@ -442,22 +441,6 @@ a.link-underline {
   }
 }
 
-/* PAGEFIND */
-
-.search-modal {
-  --pagefind-ui-scale: 1.1;
-  --pagefind-ui-primary: theme(colors.light);
-  --pagefind-ui-fade: theme(colors.light / 0.3);
-  --pagefind-ui-text: theme(colors.light);
-  --pagefind-ui-background: theme(colors.primary);
-  --pagefind-ui-border: theme(colors.light / 0.3);
-  --pagefind-ui-tag: theme(colors.light / 0.3);
-  --pagefind-ui-border-width: 0;
-  --pagefind-ui-border-radius: 2rem;
-  --pagefind-ui-image-border-radius: 0.5rem;
-  --pagefind-ui-image-box-ratio: 1;
-  --pagefind-ui-font: inherit;
-}
 
 [data-is-scrolling-up="false"][data-is-top="false"] {
   .nav {
