@@ -14,8 +14,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "cms-proxy-server": "npx @staticcms/proxy-server",
-    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=fr CURRENCY=MAD UNITS=metric NODE_VERSION=18 SNIPCART_KEY= astro dev"
+    "dev:demo": "cross-env BLOG_SLUG=blog PORTFOLIO_SLUG=work SHOP_SLUG=shop MENU_SLUG=menu WEBSITE_LANGUAGE=en CURRENCY=MAD UNITS=metric NODE_VERSION=18 SNIPCART_KEY= astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.2.0",
