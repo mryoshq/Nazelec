@@ -416,6 +416,7 @@ a.link-underline {
   @apply pointer-events-none opacity-0;
 }
 
+
 [data-is-top="false"] {
   .btn-to-top {
     @apply pointer-events-auto scale-100 opacity-100;
@@ -439,6 +440,10 @@ a.link-underline {
   .attribution {
     @apply opacity-100 delay-500;
   }
+  .btn-to-top {
+    @apply surface-base;
+  }
+   
 }
 
 
