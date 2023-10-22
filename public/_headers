@@ -6,5 +6,5 @@
 
 /_astro/*
   cache-control: public,max-age=31536000,immutable
-/favicon.svg
+/favicon.ico
   cache-control: public,max-age=2628000
