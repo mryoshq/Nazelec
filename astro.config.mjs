@@ -22,7 +22,7 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nazelec.vercel.com",
+  site: "https://nazelec.com",
   integrations: [
     mdx({}),
     sitemap(),
