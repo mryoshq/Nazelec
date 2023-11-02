@@ -1,7 +1,7 @@
 ---
 /* STATIC CMS ADMIN PAGE */
-import { page, settings, post, project, product } from "@cms/index.mjs";
-import logo from "@icons/logo_small.png";
+import { page, settings, post, project } from "@cms/index.mjs";
+import logo from "@icons/logo.svg";
 import newsIcon from "@icons/news.svg";
 import pageIcon from "@icons/page.svg";
 import settingsIcon from "@icons/settings.svg";
@@ -14,7 +14,7 @@ const url = Astro.site;
 const config = {
   locale: lang,
   site_url: url,
-  logo_url: "https://nazelec.vercel.app/logo_small.png",
+  logo_url: "https://nazelec.vercel.app/logo.svg",
   local_backend: true,
   backend: {
     name: "test-repo",
@@ -26,7 +26,7 @@ const config = {
     max_file_size: 2012000,
     folder_support: true,
   },
-  collections: [page, post, project, product, settings],
+  collections: [page, post, project, settings],
 };
 ---
 
