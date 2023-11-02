@@ -215,98 +215,7 @@ export const settings = {
         },
       ],
     },
-    {
-      name: "shop",
-      label: t("shop_settings"),
-      file: "src/content/config/shop.mdx",
-
-      fields: [
-        {
-          name: "per_page",
-          label: t("items_per_page"),
-          widget: "number",
-          default: 10,
-          value_type: "int",
-          min: 2,
-          max: 100,
-          step: 1,
-        },
-
-        {
-          name: "product_categories",
-          label: t("categories"),
-          widget: "list",
-          required: false,
-          collapsed: true,
-          fields: [
-            { name: "name", label: t("name"), widget: "string" },
-            { name: "title", label: t("title"), widget: "string" },
-            {
-              name: "description",
-              label: t("description_seo"),
-              widget: "text",
-            },
-            {
-              name: "intro",
-              label: t("hero_intro"),
-              widget: "text",
-              required: false,
-            },
-            {
-              name: "body",
-              label: t("body"),
-              widget: "markdown",
-              required: false,
-              show_raw: true,
-            },
-            {
-              name: "hero_buttons",
-              label: t("hero_buttons"),
-              label_singular: "Button",
-              widget: "list",
-              collapsed: true,
-              summary: "{{fields.label}} | {{fields.href}}",
-              fields: buttons.fields,
-              required: false,
-            },
-            {
-              name: "overwrite_style",
-              label: t("overwrite_style"),
-              widget: "boolean",
-              default: false,
-            },
-            {
-              name: "style",
-              label: t("page_style"),
-
-              widget: "object",
-              summary:
-                "template: {{fields.template}} | hero:{{fields.hero_template}} ",
-              collapsed: true,
-              fields: style.fields,
-            },
-            { name: "thumbnail", label: t("image"), widget: "image" },
-            {
-              label: t("og_image"),
-              name: "og_image",
-              widget: "image",
-              required: false,
-              hint: t("label_og_image"),
-            },
-          ],
-        },
-
-        style,
-        { name: "thumbnail", label: t("image"), widget: "image" },
-        {
-          label: t("og_image"),
-          name: "og_image",
-          widget: "image",
-          required: false,
-          hint: t("label_og_image"),
-        },
-      ],
-    },
+ 
     {
       name: "navigation",
       label: t("navigation"),
@@ -393,48 +302,6 @@ export const settings = {
         },
       ],
     },
-    {
-      name: "style",
-      label: t("style"),
-      file: "src/content/config/style.mdx",
-
-      fields: [
-        {
-          name: "surface",
-          label: t("surfaces"),
-          label_singular: t("surface"),
-          widget: "list",
-          collapsed: true,
-          summary: "{{fields.name}} | {{fields.class}}",
-          fields: [
-            { name: "name", label: t("name"), widget: "string" },
-            { name: "class", label: t("class"), widget: "string" },
-          ],
-          required: false,
-        },
-        {
-          name: "icons",
-          label: t("icons"),
-          label_singular: t("icon"),
-          widget: "list",
-          collapsed: true,
-          summary: "{{fields.label}} | {{fields.href}}",
-          fields: [
-            { name: "name", label: t("name"), widget: "string" },
-            {
-              name: "icon",
-              label: t("icon"),
-              widget: "image",
-              media_folder: "/src/icons",
-              pattern: [
-                "[^\\s]+(.*?)\\.(svg|SVG)$",
-                "please upload a valid SVG icon",
-              ],
-            },
-          ],
-          required: false,
-        },
-      ],
-    },
+  
   ],
 };
