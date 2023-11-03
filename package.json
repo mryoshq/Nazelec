@@ -9,7 +9,6 @@
   ],
   "description": "Éclairons votre parcours ensemble, NAZELEC.",
   "scripts": { 
-    "postbuild": "pagefind --site dist --output-path dist/_pagefind",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
