@@ -17,8 +17,17 @@ const config = {
   logo_url: "https://nazelec.com/logo.svg",
   local_backend: true,
   backend: {
-    name: "github",
-    repo: "mryoshq/nazelec"
+		name: 'gitlab',
+		repo: '3cha9/nazelec',
+		auth_type: 'pkce', // Required for pkce
+		app_id: 'xxxx', // Application ID from your GitLab settings
+		commit_messages: {
+			create: 'Create {{collection}} "{{slug}}"',
+			update: 'Update {{collection}} "{{slug}}"',
+			delete: 'Delete {{collection}} "{{slug}}"',
+			uploadMedia: 'Upload "{{path}}"',
+			deleteMedia: 'Delete "{{path}}"'
+		}
   },
   search: "true",
   media_folder: "src/assets",
